@@ -23,7 +23,7 @@ const Navigation = () => {
     <Navbar bg="primary" variant="dark" expand="lg" className="mb-0">
       <Container fluid>
         <Navbar.Brand as={Link} to="/dashboard" className="fw-700">
-          LendingPro
+          Portfolio Watch
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -44,7 +44,7 @@ const Navigation = () => {
               className="px-16"
             >
               <FontAwesomeIcon icon={faUsers} className="me-8" />
-              Clients
+              Borrowers
             </Nav.Link>
             <Nav.Link
               as={Link}
@@ -94,12 +94,12 @@ const Navigation = () => {
           </Nav>
           <Nav>
             <NavDropdown
-              title={
+              title={(
                 <>
                   <FontAwesomeIcon icon={faUser} className="me-8" />
                   Profile
                 </>
-              }
+              )}
               id="user-dropdown"
               align="end"
             >

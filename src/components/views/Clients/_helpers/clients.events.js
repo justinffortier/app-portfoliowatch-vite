@@ -1,3 +1,4 @@
+/* eslint-disable no-promise-executor-return */
 import { $clients, $clientsView, $clientsFilter, $clientsForm } from '@src/signals';
 import { clientsMock } from '@src/api/mocks/clients.mocks';
 

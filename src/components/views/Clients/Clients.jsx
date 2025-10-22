@@ -1,7 +1,6 @@
 import { useEffectAsync } from '@fyclabs/tools-fyc-react/utils';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Container, Row, Col } from 'react-bootstrap';
+import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import PageHeader from '@src/components/global/PageHeader';
 import SignalTable from '@src/components/global/SignalTable';
 import Search from '@src/components/global/Inputs/Search';
@@ -13,13 +12,13 @@ import {
   $clientsFilter,
   $clients,
 } from '@src/signals';
-import { fetchClients } from './_helpers/clients.events';
 import {
   kycStatusOptions,
   clientTypeOptions,
   riskRatingOptions,
 } from '@src/api/mocks/clients.mocks';
 import { relationshipManagersMock } from '@src/api/mocks/relationshipManagers.mocks';
+import { fetchClients } from './_helpers/clients.events';
 import AddClientModal from './_components/AddClientModal';
 import EditClientModal from './_components/EditClientModal';
 import ViewClientModal from './_components/ViewClientModal';
@@ -27,8 +26,16 @@ import DeleteClientModal from './_components/DeleteClientModal';
 
 const Clients = () => {
   useEffectAsync(async () => {
-    await fetchClients();
-  }, [$clientsFilter.value]);
+    // await fetchClients();
+  }, [
+    $clientsFilter.value.searchTerm,
+    $clientsFilter.value.clientType,
+    $clientsFilter.value.kycStatus,
+    $clientsFilter.value.riskRating,
+    $clientsFilter.value.page,
+    $clientsFilter.value.sortKey,
+    $clientsFilter.value.sortDirection,
+  ]);
 
   const getManagerName = (managerId) => {
     const manager = relationshipManagersMock.find((m) => m.id === managerId);

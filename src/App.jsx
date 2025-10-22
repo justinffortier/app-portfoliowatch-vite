@@ -1,5 +1,5 @@
 /* eslint-disable no-unreachable */
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import '@src/scss/style.scss';
 import UiKit from '@src/components/views/UiKit';
 import NotFound from '@src/components/views/NotFound';
@@ -24,7 +24,7 @@ function App() {
             <Route path="/ui-kit" element={<UiKit />} />
 
             <Route element={<PrivateRoutes />}>
-              <Route element={<><Navigation /><div /></>}>
+              <Route element={<><Navigation /><Outlet /></>}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/clients" element={<Clients />} />
                 <Route path="/loans" element={<div className="p-24"><h2>Loans - Coming Soon</h2></div>} />
