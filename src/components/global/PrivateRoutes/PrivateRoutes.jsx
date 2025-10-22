@@ -1,9 +1,9 @@
 import { Outlet, Navigate } from 'react-router-dom';
-import { $auth } from '@fyclabs/tools-fyc-react/signals';
+import { $global } from '@src/signals';
 import ContentWrapper from '../ContentWrapper';
 
 const PrivateRoutes = () => {
-  if (!$auth.value.isSignedIn && !$auth.value.isLoading) {
+  if (!$global.value.isSignedIn && !$global.value.isLoading) {
     return <Navigate to={`/?redirect=${window.location.pathname}`} />;
   }
   return (
