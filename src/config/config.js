@@ -10,7 +10,7 @@ export const getConfig = (key) => {
       projectId: 'portfolio-watch-app',
       storageBucket: 'portfolio-watch-app.firebasestorage.app',
       messagingSenderId: '1016954697381',
-      appId: '1:1016954697381:web:59a327e6ce5cdc119dbf4c'
+      appId: '1:1016954697381:web:59a327e6ce5cdc119dbf4c',
       measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || 'Missing Measurement ID',
     },
   };
