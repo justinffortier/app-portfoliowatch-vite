@@ -5,12 +5,12 @@ export const getConfig = (key) => {
     ENV: env,
     BACKEND_GRAPHQL_ENDPOINT: import.meta.env.VITE_APP_BASE_URL,
     VITE_APP_FIREBASE_CONFIG: {
-      apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'Missing API Key',
-      authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'Missing Auth Domain',
-      projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Missing Project ID',
-      storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'Missing Storage Bucket',
-      messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || 'Missing Messaging Sender ID',
-      appId: import.meta.env.VITE_FIREBASE_APP_ID || 'Missing App ID',
+      apiKey: 'AIzaSyANyQ0KHKktNYXbbeWw47sxGc5E36kuXwo',
+      authDomain: 'portfolio-watch-app.firebaseapp.com',
+      projectId: 'portfolio-watch-app',
+      storageBucket: 'portfolio-watch-app.firebasestorage.app',
+      messagingSenderId: '1016954697381',
+      appId: '1:1016954697381:web:59a327e6ce5cdc119dbf4c'
       measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || 'Missing Measurement ID',
     },
   };
